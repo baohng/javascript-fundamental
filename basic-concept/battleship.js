@@ -29,9 +29,9 @@
   user win the game
 */
 
-var location1 = 3;
-var location2 = 4;
-var location3 = 5;
+var startLocation = Math.floor(Math.random() * 5);
+var location2 = startLocation + 1;
+var location3 = location2 + 1;
 var guess;
 var guesses = 0;
 var hits = 0;
@@ -45,7 +45,7 @@ while (isSunk) {
     alert("Please enter the valid number!");
   } else {
     guesses++;
-    if (guess == location1 || guess == location2 || guess == location3) {
+    if (guess == startLocation || guess == location2 || guess == location3) {
       alert("hit");
       hits++;
       if (hits == limit) {
